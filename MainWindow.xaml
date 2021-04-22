@@ -1,0 +1,28 @@
+﻿<Window x:Class="WpfAppApiService.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppApiService"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="BtnAdd" Content="+ Əlavə et" HorizontalAlignment="Left" Margin="139,136,0,0" VerticalAlignment="Top" Width="75" Click="Btn_Add"/>
+        <TextBox x:Name="TxtName" HorizontalAlignment="Left" Margin="84,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
+        <TextBox x:Name="TxtSurname" HorizontalAlignment="Left" Margin="84,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
+        <TextBox x:Name="TxtOld" HorizontalAlignment="Left" Margin="84,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
+        <Label Content="Ad" HorizontalAlignment="Left" Margin="24,45,0,0" VerticalAlignment="Top"/>
+        <Label Content="Yaş" HorizontalAlignment="Left" Margin="25,88,0,0" VerticalAlignment="Top"/>
+        <Label Content="Soyad" HorizontalAlignment="Left" Margin="25,67,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="DgPerson" IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False" Margin="282,15,9.6,37" CanUserResizeColumns="False" SelectionChanged="DgPerson_SelectionChanged" >
+
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="DgtName" Width="0.25*" Header="ID" Binding="{Binding id}"/>
+                <DataGridTextColumn x:Name="DgtSurname" Width="0.25*" Header="Name" Binding="{Binding personName}"/>
+                <DataGridTextColumn x:Name="DgtUsername" Width="0.25*" Header="Surname" Binding="{Binding personSurname}"/>
+                <DataGridTextColumn x:Name="DgtPassword" Width="0.25*" Header="Age" Binding="{Binding age}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
